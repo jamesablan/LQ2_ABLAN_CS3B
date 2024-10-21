@@ -1,0 +1,71 @@
+# Store student and classmate information in a dictionary
+students = {
+    "student": {
+        "name": "Lewis Fonsi",
+        "address": "City of Candon, Ilocos Sur",
+        "fav_num": "7",
+        "age": 21,
+        "allowance": 700
+    },
+    "classmate": {
+        "name": "Andrea Andres",
+        "address": "City of Vigan, Ilocos Sur",
+        "fav_num": "5",
+        "age": 25,
+        "allowance": 500.0
+    }
+}
+
+# Store lengths of names in a list
+name_lengths = [len(students["student"]["name"]), len(students["classmate"]["name"])]
+
+# Function to check conditions
+def check_conditions():
+    student = students["student"]
+    classmate = students["classmate"]
+
+    if "Ilocos Sur" in student["address"] and student["name"] == "Lewis Fonsi":
+        print(f"{classmate['name']} is from {classmate['address']}")
+
+        # Compare name lengths
+        if name_lengths[1] > name_lengths[0]:
+            print(f"{classmate['name']} has a longer name than {student['name']} with {name_lengths[1]} letters.")
+        else:
+            print(f"{student['name']} has a longer name than {classmate['name']} with {name_lengths[0]} letters.")
+    else:
+        print("None of the students live in Ilocos Sur")
+
+# Call the function to check conditions
+check_conditions()
+
+# Perform mathematical operations
+combined_weekly_allowance = float(students["student"]["allowance"]) + students["classmate"]["allowance"]
+print(f"Weekly allowance of {students['student']['name']} and {students['classmate']['name']} is {combined_weekly_allowance:.2f} pesos.")
+
+# Create lists
+classlist = [students["student"]["name"], students["classmate"]["name"]]
+classlist_ext = ["Candon", "Vigan"]
+classlist.extend(classlist_ext)
+
+# Print class list
+for name in classlist:
+    print(name)
+
+# Create a numerical list
+numerical_vars = [students["student"]["age"], students["classmate"]["age"],
+                  int(students["student"]["allowance"]), int(students["classmate"]["allowance"])]
+numerical_vars.append(students["classmate"]["age"])
+
+# Reverse sort the numerical list
+numerical_vars.sort(reverse=True)
+print("Reversed Sorted Numerical Variables: ", numerical_vars)
+
+# Get user input
+user_name = input("Enter your name: ")
+
+# Function for quiz
+def quiz_two(student_name):
+    print(f"Congratulations on passing Quiz 2, {student_name}!")
+
+# Call the function with user input
+quiz_two(user_name)
